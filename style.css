@@ -1,0 +1,334 @@
+ /* VARIÁVEIS GLOBAIS DE CORES E TAMANHO DE FONTE */
+:root { 
+    --main-color: #83077e; /* Roxo principal do tema */
+    --white: #ffffff;
+    --bg: #ffffff;
+    --border: 0.1rem solid rgba(255,255,255,0.3);
+    font-size: 10px;
+}
+
+ /* RESET GERAL DE ESTILOS - remove margens, bordas, etc. */
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: none;
+    transition: 0.2s linear; /* ANIMAÇÕES SUAVES */
+    font-family: "Roboto", sans-serif; /* FONTE PRINCIPAL */
+}
+
+/* ESTILOS GERAIS DA PÁGINA */
+body {
+        background: var(--bg); 
+        width: 100%;
+        margin: auto;
+}
+
+/* CONFIGURAÇÃO PADRÃO DAS SECTIONS: espaçamento interno, centralização e largura */
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 80%; /* Ocupa 80% da largura da página */
+}
+
+/* Imagem da seção 'Sobre' - A imagem ocupará 100% da largura do elemento pai */
+img{
+    width: 100%;
+}
+
+.header {
+    position: fixed; /* menu fixado */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99; /* header na frente de todo mundo */
+    border-bottom: var(--border);
+    background-color: var(--bg);
+}
+
+
+.header section {
+    display: flex; 
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-between; /* Espaça os itens igualmente com um em cada extremidade */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+#logo { /* captura o id que está no html, atrelado ao atributo img e faz alterações APENAS nesse atributo que tem o id*/
+    width: 90px;
+    height: 90px;
+}
+
+/* ÍCONES DE NAVEGAÇÃO */
+.iconeNav{
+    width: 30px;
+    height: 30px;
+}
+
+/* SELETOR PARA TODOS OS LINKS DENTRO DO ELEMENTO COM A CLASSE 'navjoias' */
+.navjoias a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #000;
+}
+
+/* EFEITO HOVER NOS LINKS */
+.navjoias a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color); /* Adiciona uma borda inferior roxa */
+    padding-bottom: 0.5rem; /* Cria um espaço entre o texto e a borda */
+    font-size: 2rem; /* Aumenta ligeiramente o tamanho da fonte */
+}
+
+/* ÍCONES DA ÁREA DE USUÁRIO/CARRINHO */
+.icons img {
+    margin: 1rem;
+    cursor: pointer; /* Cursor muda para a "mãozinha" ao passar o mouse */
+}
+
+/* EFEITO AO PASSAR O MOUSE NOS ÍCONES */
+.icons img:hover {
+    width: 40px;
+    height: 40px;
+}
+
+/* ESTILO DO BOTÃO PRINCIPAL */
+.btn {
+    border: 1px solid var(--main-color);
+    border-radius: 7px; /* Cantos arredondados */
+    background: var(--main-color);
+    color: #ffffff;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem; 
+    display: inline-block; /* inline-block: elemento em linha com propriedades de bloco. */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra leve ao redor */
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem; /* Aumenta o espaçamento entre letras */
+}
+
+/* CONTAINER PRINCIPAL DA SEÇÃO INICIAL COM IMAGEM DE FUNDO */
+.home-container {
+    background: url("./il_fullxfull.471458414_crid\ \(1\).jpg");
+    height: 100vh; /* Altura da tela inteira */
+    background-position: center;
+    background-size: cover; /* Cobre todo o espaço da div - tela */
+}
+
+/* ESTILIZAÇÃO DA SECTION DENTRO DO CONTAINER DA HOME */
+.home-container section{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+/* Área de conteúdo (textos e botão) da home */
+.content {
+    max-width: 60rem; /* Largura máxima para o conteúdo */
+    margin-left: 20px;
+}
+/* Título da seção "home" */
+#home .content h3 {
+    color: #fff;
+    font-size: 6rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Sombra preta para melhor leitura */
+}
+/* Título da seção "sobre" */
+#about .content h3 {
+    color: var(--main-color);
+    font-size: 6rem;
+}
+/* Parágrafo da seção "home" (página inicial) */
+#home .content p {
+    color:#ffffff;
+    font-size: 2rem;
+    font-weight: 400; /* Peso padrão da fonte */
+    line-height: 1.8; /* Espaço entre linhas */
+    padding: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+} 
+
+/* Estiliza o parágrafo dentro da seção #about com texto preto, fonte grande e espaçamento confortável */
+#about .content p {
+    color:#000;
+    font-size: 2rem;
+    font-weight: 400; /* Peso da fonte regular */
+    line-height: 1.8; /* Altura da linha para melhor leitura */
+    padding: 1rem 0;
+} 
+
+/* Estilização para os títulos principais das seções */
+.title {
+    margin-bottom: 3rem; /* Espaço abaixo do título */
+    font-size: 5rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase; /* Transforma texto em letras maiúsculas */
+}
+
+/* Estilo para o span dentro do título */
+.title span {
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* Largura do container da seção #about */
+#about {
+    width: 80%; /* Ocupa 80% da largura da tela */
+}
+
+/* Alinha os elementos lado a lado e pelo topo */
+#about .row {
+    display: flex; /* Coloca os elementos lado a lado */
+    align-items: flex-start; /* Alinha os itens no topo */
+    background-color: white;
+}
+
+/* Exibe os produtos em colunas ajustáveis com espaçamento */
+.produtos .box-container {
+    display: grid; /* Ativa o sistema de grade */
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); /* Colunas automáticas de no mínimo 30rem */
+    gap: 1.5rem; /* Espaçamento entre os itens da grade */
+}
+
+/* Estilo individual para cada box de produto */
+.box-container .box {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5rem;
+    cursor: pointer;
+}
+
+/* Define tamanho fixo para imagem dos produtos */
+.produtos .box-container .box img {
+    height: 15rem;
+    width: 15rem;
+}
+
+/* Nome dos produtos */
+.produtos .box-container .box h3 {
+    color: #000;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+/* Preço atual do produto */
+.produtos .box-container .box .price {
+    color: #000;
+    font-size: 2.5rem;
+    padding: 0.5rem 0; /* Espaçamento vertical menor */
+} 
+
+/* Preço anterior riscado */
+.produtos .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter; /* Peso mais leve na fonte */
+}
+
+/* Quando o mouse passa sobre o box do produto */
+.produtos .box-container .box:hover {
+    background-color: rgb(255, 122, 251)
+}
+
+/* Altera a cor de todos os elementos filhos ao passar o mouse */
+.produtos .box-container .box:hover>* {
+    color: var(--white);
+}
+
+/* Container de comentários/reviews */
+.review .box-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha entre os comentários */
+    gap: 2rem; /* Espaço entre os boxes */
+    justify-content: center;
+}
+
+/* Estilo da caixa de cada comentário */
+.review .box-container .box {
+    flex: 1 1 300px; /* Largura mínima de 300px com flexibilidade */
+    padding: 3rem 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+
+/* Texto do comentário */
+.review .box-container .box p {
+    font-size: 1.5rem;
+    color: #000;
+    padding: 2rem 0;
+    line-height: 1.8;
+    font-weight: lighter; /* Fonte mais fina */
+}
+
+/* Nome do cliente */
+.review .box-container .box h3 {
+    color: #000;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+/* Foto do usuário em forma de círculo */
+.review .box-container .box .user {
+    height: 7rem; /* Altura fixa */
+    width: 7rem; /* Largura fixa */
+    border-radius: 50%; /* Formato circular */
+}
+
+/* Imagem pequena dentro de comentários (ex: selo) */
+.comentario-img {
+    width: 50px;
+    height: auto;
+  }
+
+/* Imagem de estrela (avaliação) */
+.star-img {
+    width: 30px;
+    height: auto;
+}
+
+/* Alinha endereço em coluna centralizada */
+.address {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+}
+
+/* Rodapé do site */
+.footer {
+    text-align: center;
+    
+}
+
+/* Container dos ícones sociais */
+.footer .share {
+    padding: 1rem 0;
+    
+}
+
+/* Estiliza os ícones sociais */
+.footer .share img {
+    margin: 0.3;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;
+    width: 30px;
+    height: auto;
+    color: #000;
+}
+
+/* Efeito de hover nos ícones sociais */
+.footer .share img:hover {
+    background-color: var(--main-color);
+}
+
+
+
+
